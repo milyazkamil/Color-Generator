@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+:root {
+  --white: #ffffff;
+  --btn-box-shadow: #00000049;
+  --bg-color: #F8FAFC;
+  --btn-color: #645CFF;
+  --btn-color-hover: #3C3799;
+}
+
+#main {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+
+  & > #form-container {
+    text-align: center;
+    gap: 5rem;
+    padding: 3rem 0;
+
+    & > #form {
+      display: flex;
+      justify-content: center;
+
+      & > #color-input {
+        height: 2.3rem;
+        cursor: pointer;
+      }
+
+      & > #submit-btn {
+        background-color: var(--btn-color);
+        transition: all 0.3s ease;
+        color: var(--white);
+
+        &:hover {
+          box-shadow: 0 5px 10px 0 var(--btn-box-shadow);
+          background-color: var(--btn-color-hover);
+        }
+      }
+    }
+  }
+
+  & > #color-list {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-columns: repeat(7, 1fr);
+
+    & > .color-card {
+      margin: 0 0.5rem;
+      cursor: pointer;
+      width: auto;
+      height: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #main {
+
+    & > #form-container {
+      gap: 4rem;
+    }
+
+    & > #color-list {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #main {
+    & > #form-container {
+      gap: 3rem;
+    }
+
+    & > #color-list {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #main {
+
+    & > #form-container {
+      gap: 2rem;
+    }
+
+    & > #color-list {
+      grid-template-columns: repeat(4, 1fr);
+
+      & > .color-card {
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main {
+
+    & > #form-container {
+      flex-direction: column;
+      row-gap: 1rem;
+      padding: 3rem 0;
+    }
+
+    & > #color-list {
+      grid-template-columns: repeat(3, 1fr);
+
+      & > .color-card {
+        height: 220px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #main {
+
+    & > #color-list {
+      grid-template-columns: repeat(2, 1fr);
+
+      & > .color-card {
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #main {
+
+    & > #form-container {
+
+      & > #form {
+
+        & > #text-input {
+          width: 150px;
+        }
+      }
+    }
+
+    & > #color-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
