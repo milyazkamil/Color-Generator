@@ -1,7 +1,7 @@
 import ColorCard from "./ColorCard";
 import { nanoid } from "nanoid";
 
-const ColorsContainer = ({ colors }) => {
+const ColorList = ({ colors }) => {
   return (
     <div id="color-list">
       {
@@ -10,4 +10,4 @@ const ColorsContainer = ({ colors }) => {
     </div>
   )
 }
-export default ColorsContainer;
+export default ColorList;
